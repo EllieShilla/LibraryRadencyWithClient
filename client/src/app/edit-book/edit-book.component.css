@@ -1,0 +1,46 @@
+.libraryTitle{
+  margin-top:20px;
+  margin-bottom: 20px;
+}
+
+.divFormElem{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.labelForm{
+  width: 100px;
+  display:inline-block;
+}
+
+.labelContentForm{
+  width: 100px;
+  display:block;
+  float: left;
+}
+
+.inputTextForm{
+  border-radius: 3px;
+  border: 0px;
+}
+
+.errorSpan{
+  margin-left: 100px;
+}
+
+.chooseBtn{
+  margin-left: -90px;
+  border-radius: 3px;
+}
+
+#fileName{
+  border-radius: 3px;
+  border: 0px;
+  padding-right: 0px;
+}
+
+.addEditBook{
+  width:100px;
+  margin-right:10px;
+}

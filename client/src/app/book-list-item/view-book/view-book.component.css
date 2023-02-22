@@ -1,0 +1,20 @@
+.modalBodyDiv{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
+}
+
+.reviewMess{
+  height:250px;
+  overflow-y: scroll;
+}
+
+.pContent{
+  height:150px;
+  overflow-y: scroll;
+}
+
+.divRevRat{
+  display: flex;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,36 @@
+<div class="modal-header">
+  <h5 class="modal-title w-100 text-center" id="exampleModalCenterTitle">Details</h5>
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onClose()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="modalBodyDiv">
+    <div class="col-md-4">
+      <img src="{{ book.cover }}" alt="" width="200" height="250">
+      <div class="divRevRat">
+        <p>Rating: {{ book.rating| number:'1.1-1' }}</p>
+        <p style="margin-left: 40px;">Reviews: {{ book.reviews.length }}</p>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <h1>{{ book.title }}</h1>
+      <h6>{{ book.author }} {{ book.genre }}</h6>
+      <div>
+        <p class="pContent">{{ book.content }}</p>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="reviewMess" *ngIf="book.reviews">
+    <ul style="list-style-type: none" *ngFor="let rev of book.reviews">
+      <li>
+        <h4>{{ rev.reviewer }}</h4>
+        <p>{{ rev.message }}</p>
+      </li>
+      <li>
+        <hr>
+      </li>
+    </ul>
+  </div>
+</div>

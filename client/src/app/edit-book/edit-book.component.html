@@ -1,0 +1,60 @@
+<main class="container">
+  <h1 class="h2 libraryTitle">Library</h1>
+  <div class="p-4 p-md-5 mb-4 rounded text-bg-info">
+
+    <div>
+      <h4>{{ title }} Book</h4>
+      <hr>
+      <br>
+      <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+        <div>
+          <div class="divFormElem">
+            <fieldset>
+              <p>
+                <label for="title" class="control-label labelForm">Title</label>
+                <input [class.is-invalid]="bookForm.get('title')?.touched && bookForm.get('title')?.invalid"
+                  formControlName="title" type="text" class="input inputTextForm">
+                <span *ngIf="bookForm.get('title')?.errors?.['required']" class="invalid-feedback text-dark errorSpan">Please write the title</span>
+              </p>
+
+              <p>
+                <label for="cover" class="control-label labelForm">Cover</label>
+                <span>
+                  <input type="text" class="input" id="fileName">
+                  <input style="display: none" type="file" #hiddenfileinput (change)="picked($event)">
+                  <button (click)="hiddenfileinput.click()" class="btn btn-primary chooseBtn">Choose...</button>
+                </span>
+              </p>
+
+              <p>
+                <label for="genre" class="control-label labelForm">Genre</label>
+                <input [class.is-invalid]="bookForm.get('genre')?.touched && bookForm.get('genre')?.invalid" formControlName="genre" type="text" class="input inputTextForm">
+                <span *ngIf="bookForm.get('genre')?.errors?.['required']" class="invalid-feedback text-dark errorSpan">Please write the genre</span>
+              </p>
+
+              <p>
+                <label for="author" class="control-label labelForm">Author</label>
+                <input [class.is-invalid]="bookForm.get('author')?.touched && bookForm.get('author')?.invalid" formControlName="author" type="text" class="input inputTextForm">
+                <span *ngIf="bookForm.get('author')?.errors?.['required']" class="invalid-feedback text-dark errorSpan">Please write the author</span>
+              </p>
+            </fieldset>
+
+            <div>
+              <p>
+                <label for="content" class="control-label labelContentForm">Content</label>
+                <textarea [class.is-invalid]="bookForm.get('content')?.touched && bookForm.get('content')?.invalid" formControlName="content" type="text" class="input inputTextForm" id="content" rows="6" cols="40"></textarea>
+                <span *ngIf="bookForm.get('content')?.errors?.['required']" class="invalid-feedback text-dark errorSpan">Please write the content</span>
+              </p>
+            </div>
+          </div>
+          <div style="text-align: center;">
+            <input type="submit" value="{{ title }}" class="btn btn-light addEditBook" [disabled]="bookForm.valid==false">
+            <input type="button" value="Clear" style="width:100px;" class="btn btn-light" (click)="onReset()">
+          </div>
+
+        </div>
+      </form>
+    </div>
+
+  </div>
+</main>

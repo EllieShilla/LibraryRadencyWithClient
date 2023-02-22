@@ -1,0 +1,34 @@
+<main class="container">
+  <button type="button" class="btn btn-primary" id="allBtn" (click)="changeColor(1)">All</button>
+  <button type="button" class="btn btn-primary" id="recBtn" (click)="changeColor(-1)">Recommended</button>
+  <input #search type="text" class="input" placeholder="genre" id="genreForRec">
+  <button type="button" class="btn btn-primary" id="genreForRecBtn" (click)="getTop10BooksByGenre()">Search</button>
+  <div class="p-4 p-md-5 mb-4 rounded text-bg-info divInMain">
+    <div class="row mb-2">
+
+      <div class="col-md-6" *ngFor="let book of books">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col-auto d-none d-lg-block">
+            <img width="200" height="250" src="{{ book.cover }}" />
+          </div>
+          <div class="col p-4 d-flex flex-column position-static">
+            <div class="d-flex">
+              <h4 class="col-8">{{ book.title }}</h4>
+              <div class="col-4">
+                <i class="fa fa-eye bookBtnShow"
+                  (click)="openModal(book.id)"></i>
+                <i class="fa fa-pencil bookBtnUpdate" (click)="updateBook(book.id)"></i>
+              </div>
+            </div>
+            <h6 class="card-text mb-auto" style="margin-top:20px;">{{ book.author }}</h6>
+            <div class="revRatBook">
+              <p>Review: {{ book.reviewsNumber }}</p>
+              <p>Rating: {{ book.rating| number:'1.1-1' }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>

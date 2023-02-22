@@ -1,0 +1,49 @@
+#allBtn, #recBtn{
+  width:150px;
+  margin-right: 10px;
+}
+
+.divInMain{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height:350px;
+  overflow-y: scroll;
+  margin-top:10px;
+}
+
+.bookBtnShow{
+  font-size:25px;
+  margin-right: 10px;
+  border:1px solid;
+  border-radius: 3px;
+  padding: 7px;
+}
+
+.bookBtnUpdate{
+  font-size:25px;
+  border:1px solid;
+  border-radius: 3px;
+  padding: 7px 9px;
+}
+
+.bookBtnShow:hover, .bookBtnUpdate:hover{
+  cursor: pointer;
+  background-color: lightgray;
+}
+
+.revRatBook{
+  display: inline-flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  width: 200px;
+}
+
+#genreForRec{
+  border-radius: 3px;
+  border: 1px solid;
+}
+
+#genreForRecBtn{
+  margin-left:10px;
+}
